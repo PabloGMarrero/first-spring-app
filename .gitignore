@@ -1,5 +1,4 @@
 HELP.md
-target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
@@ -29,6 +28,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
 
 target/
 pom.xml.tag
