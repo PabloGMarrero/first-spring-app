@@ -1,6 +1,7 @@
 package unq.firstspringproject.springApp.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -18,10 +19,10 @@ public class Author {
     public Author() {
     }
 
-    public Author(String firstName, String lastName, Set<Book> books) {
+    public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.books = books;
+        this.books = new HashSet<>();
     }
 
     public Long getId() {
@@ -67,5 +68,10 @@ public class Author {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public void addBook(Book aBook){
+        this.books.add(aBook);
+        aBook.addAuthor(this);
     }
 }
