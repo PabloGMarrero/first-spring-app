@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books - Spring app</title>
+</head>
+<body>
+    <h1>Authors list</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last name</th>
+        </tr>
+    </table>
+
+    <ul th:each="author : ${authors}">
+        <li th:text ="${author.id}"></li>
+        <li th:text ="${author.firstName}"></li>
+        <li th:text ="${author.lastName}"></li>
+    </ul>
+
+</body>
+</html>
